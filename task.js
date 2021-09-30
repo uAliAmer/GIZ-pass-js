@@ -1,44 +1,34 @@
-let numbers = [
-    5,
-    8,
-    0,
-    1,
-    9,
-    11,
-    15,
-    16
-];
 
-console.log("Original numbers list: ", numbers)
+let num = [5, 8, 0, 1, 9, 11, 5, 16];
 
-for(let i = 0 ; i < numbers.length ; i++)
-{
-    for(let j = 0 ; j < numbers.length - 1 ; j++)
-    {
-        if(numbers[i] > numbers[j + 1])
-        {
-            let temp = numbers[j];
-            numbers[j] = numbers[j + 1]
-            numbers[j + 1] = temp;
+console.log("Original numbers list: ", num)
+
+for(var i = 0; i < num.length; i++) {
+    for(let j=i+1; j < num.length; j++) {
+        if(num[i] > num[j]) {
+            var temp = num[i];
+            num[i] = num[j];
+            num[j] = temp;        
         }
     }
 }
 
-console.log("Numbers list After sorting: ", numbers)
+console.log("Numbers list after Asc sorting:: ", num);
 
-for(let i = 0 ; i < numbers.length ; i++)
+
+for(var i = 0 ; i < num.length ; i++)
 {
-    for(let j = 0 ; j < numbers.length - 1 ; j++)
+    for(let j = 0 ; j < num.length - 1 ; j++)
     {
-        if(numbers[i] < numbers[j + 1])
+        if(num[i] < num[j + 1])
         {
-            let temp = numbers[j];
-            numbers[j] = numbers[j + 1]
-            numbers[j + 1] = temp;
+            var temp = num[j];
+            num[j] = num[j + 1]
+            num[j + 1] = temp;
         }
     }
 }
 
-console.log("Numbers list After Desc sorting: ", numbers)
+console.log("Numbers list After Desc sorting: ", num)
 
 
