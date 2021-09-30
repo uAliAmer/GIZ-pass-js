@@ -1,35 +1,34 @@
+let numbers = [5, 8, 0, 1, 9, 11, 5, 16];
 
-let num = [5, 8, 0, 1, 9, 11, 5, 16];
+console.log("Original numbers list: ", numbers)
 
-console.log("Original numbers list: ", num)
+let ascOrder = [...numbers];
 
-for(let i = 0; i < num.length; i++) {
-    for(let j=i+1; j < num.length; j++) {
-        if(num[i] > num[j]) {
-            const temp = num[i];
-            num[i] = num[j];
-            num[j] = temp;        
+
+for(let i = 0; i < ascOrder.length; i++) {
+    for(let j=0; j < ascOrder.length; j++) {
+        if(ascOrder[i] < ascOrder[j])  {
+            const temp = ascOrder[i];
+            ascOrder[i] = ascOrder[j];
+            ascOrder[j] = temp;        
         }
     }
 }
 
-console.log("Numbers list after Asc sorting:: ", num);
+console.log("Numbers list after Asc sorting:: ", ascOrder);
 
+let descOrder = [...numbers];
 
-for(let i = 0 ; i < num.length ; i++)
-{
-    for(let j = 0 ; j < num.length - 1 ; j++)
-    {
-        if(num[i] < num[j + 1])
-        {
-            const temp = num[j];
-            num[j] = num[j + 1]
-            num[j + 1] = temp;
+for(let i = 0; i < descOrder.length; i++) {
+    for(let j=0; j < descOrder.length; j++) {
+        if(descOrder[i] > descOrder[j]) {
+            const temp = descOrder[i];
+            descOrder[i] = descOrder[j];
+            descOrder[j] = temp;        
         }
     }
 }
-
-console.log("Numbers list After Desc sorting: ", num)
+console.log("Numbers list After Desc sorting: ", descOrder)
 
 //TODO: Try to figure out the issue of the sorting algorithm, and fix it to work as expected. 
 // Done
@@ -41,4 +40,4 @@ console.log("Numbers list After Desc sorting: ", num)
 // Done
 
 //TODO: Read the numbers list from data.txt file, sort it in ASC order, then store it in a new file called output.txt
-// Working on it...
+// Done
